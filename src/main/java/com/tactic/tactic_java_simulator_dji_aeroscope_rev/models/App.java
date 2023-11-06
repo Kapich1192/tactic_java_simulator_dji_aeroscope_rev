@@ -36,7 +36,7 @@ public class App implements Configurator, FlightConfigurator {
             put("refresh_home_longitude", "true");
 
             put("status_simple_log","true");
-            put("status_empty_sn_log","true");
+            put("status_empty_sn_log","false");
 
         }};
 
