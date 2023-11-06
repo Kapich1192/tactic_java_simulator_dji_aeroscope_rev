@@ -1,0 +1,9 @@
+{
+  "sn" : "8BA69EA",
+  "currentLatitude" : 37.6546,
+  "currentLongitude" : 57.656546,
+  "appLatitude" : 0.0,
+  "appLongitude" : 0.0,
+  "homeLatitude" : 0.0,
+  "homeLongitude" : 0.0
+}
