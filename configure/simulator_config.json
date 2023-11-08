@@ -1,11 +1,11 @@
 {
   "setting" : {
     "refresh_home_latitude" : "true",
-    "device_sn" : "KSFSIBJ23458",
+    "device_sn" : "0QRDJCGR039RJT",
     "refresh_app_longitude" : "true",
     "refresh_current_longitude" : "true",
     "refresh_home_longitude" : "true",
-    "flight_path" : "flight_info/",
+    "flight_path" : "/Users/admin/Desktop/flight_info/",
     "refresh_app_latitude" : "true",
     "flight_source" : "flights/",
     "status_simple_log" : "true",

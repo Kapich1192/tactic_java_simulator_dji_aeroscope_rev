@@ -14,7 +14,8 @@ public class TacticJavaSimulatorDjiAeroscopeRevApplication {
 		if(!app.loadConfigure()) {
 			app.initConfigure();
 		}
-		app.initFlight();
+		if (!app.loadFlights())
+			app.initFlight();
 		SpringApplication.run(TacticJavaSimulatorDjiAeroscopeRevApplication.class, args);
 	}
 

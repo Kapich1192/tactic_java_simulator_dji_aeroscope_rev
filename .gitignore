@@ -9,7 +9,7 @@ log/
 HELP.md
 flights/
 flight_info/
-
+materials/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

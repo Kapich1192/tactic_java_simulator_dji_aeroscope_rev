@@ -42,6 +42,7 @@ public class App implements Configurator, FlightConfigurator {
 
         flights = new ArrayList<>();
     }
+
     public HashMap<String, String> getSetting() {
         return setting;
     }

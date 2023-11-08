@@ -6,15 +6,24 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Date;
 
 import static com.tactic.tactic_java_simulator_dji_aeroscope_rev.config.Singleton.app;
 
 public interface SimpleLog {
     default void printSimpleLog(Flight flight) {
         String path = app.getSetting().getOrDefault("flight_path","flight_info/") + "Device_"+
-                app.getSetting().getOrDefault("device_sn","SJDVJS432") + "/";
+                app.getSetting().getOrDefault("device_sn","0QRDJCGR039RJT") + "/";
         String pathFlight = path + "Flight_" + flight.getSn() + "/";
-        String fileName = pathFlight + "Flight_" + flight.getSn() + ".txt";
+        Date date = new Date(Long.parseLong(flight.getTimeDetected()+"000"));
+        String year = "" + (date.getYear() + 1900);
+        String month = ""+ (date.getMonth() + 1);
+        String day = "" + (date.getDate());
+        String hour = "" + (date.getHours());
+        String min = "" + (date.getMinutes());
+        String sec = "" + (date.getSeconds());
+        String title = year + "_" + month + "_" + day + "@" + hour + "_" + min + "_" + sec;
+        String fileName = pathFlight + "Flight_" + title + "_flight.log";
         new File(pathFlight).mkdirs();
         File file = new File(fileName);
         moderationFlight(flight);
@@ -54,7 +63,7 @@ public interface SimpleLog {
                 "\"CUR_POS_LONGTITUDE\":" + curLongitude + "," +
                 "\"HOME_LATITUDE\":" + homeLatitude + "," +
                 "\"HOME_LONGITUDE\":" + homeLongitude + "," +
-                "\"PRODUCT_TYPE\":" + productType + "," +
+                "\"PRODUCT_TYPE\":" + 68 + "," +
                 "\"SEQ_NUM\":3," +
                 "\"STATUS_INFO\":\"0000100000000111\"" +
                 ",\"UUID\":\"1359829768485543936\"," +
@@ -62,7 +71,7 @@ public interface SimpleLog {
                 "\"VY_EAST_SPEED\":" + vyEastSpeed + "," +
                 "\"VZ_RISE_SPEED\":" + vzRiseSpeed + "," +
                 "\"YAW\":65.580001831054688}" +
-                ",\"DETECT_TIME\":"+detectedTime+"," +
+                ",\"DETECT_TIME\":" + detectedTime+"," +
                 "\"RF_INDEX\":0," +
                 "\"RF_TYPE\":2," +
                 "\"TIME_STAMP\":" + timeStamp + "," +
